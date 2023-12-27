@@ -62,7 +62,7 @@ function RegisterPage() {
                         <Button className="d-block mt-3 mb-2" style={{width: "100%", background: "#5865f2"}}>Continue</Button>
                         <Form.Label className="mb-3" style={{fontSize: "10px"}}>By registering, you agree to Discord&apos;s Terms of Service and Privacy Policy</Form.Label>
                         
-                        <Card.Link className="d-block" href="#">Already have an account?</Card.Link>
+                        <Card.Link className="d-block" href="/login">Already have an account?</Card.Link>
                     </Form>
                 </Card.Body>
             </Card>

@@ -18,7 +18,7 @@ export default function AuthPage() {
 
                 <Button className="d-block mt-3" style={{width: "100%", background: "#5865f2"}}>Log In</Button>
 
-                <div className="mt-2">Need an account? <Card.Link href="#">Register</Card.Link></div>
+                <div className="mt-2">Need an account? <Card.Link href="/register">Register</Card.Link></div>
             </Form>
         </Card.Body>
     </Card>
