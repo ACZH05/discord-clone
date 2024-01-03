@@ -1,11 +1,26 @@
 import { Button, Card, Form } from "react-bootstrap"
+import { motion } from "framer-motion"
 
 function RegisterPage() {
     let days = []
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     const years = []
     const currentYear = new Date().getFullYear()
-    console.log(currentYear)
+
+    const variants = {
+        hidden: {
+            opacity: 0,
+            y: -200
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {duration: .75}
+        },
+        exit: {
+            opacity: 0,
+        }
+    }
 
     for (let i = 1; i <= 31; i++) {
         days.push(i)
@@ -16,8 +31,14 @@ function RegisterPage() {
     }
 
     return (
-        <div>
-            <Card className="position-absolute top-50 start-50 translate-middle" style={{background: "#2b2d31", width: "30%", color: "white"}}>
+        <motion.div
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        className="d-flex justify-content-center align-items-center"
+        style={{height: "100vh"}}>
+            <Card style={{background: "#2b2d31", width: "30%", color: "white"}}>
                 <Card.Body>
                     <Card.Title className="text-center">Create an account</Card.Title>
                     <Form className="mx-3" style={{color: "#b3b8bf", fontSize: "12px"}}>
@@ -66,7 +87,7 @@ function RegisterPage() {
                     </Form>
                 </Card.Body>
             </Card>
-        </div>
+        </motion.div>
     )
 }
 
