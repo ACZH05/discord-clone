@@ -1,9 +1,11 @@
+import NavBar from "../components/NavBar"
+
 function MainPage() {
   return (
     <div className="overflow-hidden">
         <div className="flex h-screen">
             <div className="w-[72px] bg-[#1e1f22]">
-                Hello
+                <NavBar />
             </div>
             <div className="w-[240px] bg-[#2b2d31]">
                 Hello
