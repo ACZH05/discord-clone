@@ -6,13 +6,18 @@ export default {
   ],
   theme: {
     extend: {
-      content: {}
+      content: {},
+      fontFamily: {
+        whitney: ['Whitney']
+      }
     },
   },
   safelist: [
     'hover:bg-[#5865f2]',
     'hover:bg-[#23a559]',
   ],
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
 

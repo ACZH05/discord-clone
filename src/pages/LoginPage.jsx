@@ -1,4 +1,3 @@
-import { Button, Card, Form } from "react-bootstrap";
 import { motion } from "framer-motion"
 
 export default function AuthPage() {
@@ -24,27 +23,29 @@ export default function AuthPage() {
       animate="visible"
       exit="exit"
     >
-      <div className="d-flex justify-content-center align-items-center" style={{height: "100vh"}}>
-        <Card style={{width: "30%", background: "#2b2d31", color: "white"}}>
-            <Card.Body>
-                <Card.Title className="text-center">Welcome Back!</Card.Title>
-                <Card.Subtitle className="text-center text-secondary mb-3">We&apos;re so excited to see you again!</Card.Subtitle>
+      <div className="d-flex justify-content-center align-items-center h-screen">
+        <div className="w-[30%] bg-[#2b2d31] text-white p-3">
+          <div className="text-center fs-4 fw-bold">Welcome Back!</div>
+          <div className="text-center text-secondary mb-3">We&apos;re so excited to see you again!</div>
 
-                <Form className="mx-3" style={{color: "#b3b8bf", fontSize: "12px"}}>
-                    <Form.Label className="mb-2 fw-bold">EMAIL OR PHONE NUMBER <span className="text-danger">*</span></Form.Label>
-                    <Form.Control type="email" className="border-0 mb-3" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}} />
+          <form className="mx-3" style={{color: "#b3b8bf", fontSize: "12px"}}>
+              <div className="flex flex-col">
+                <label className="mb-2 fw-bold">EMAIL OR PHONE NUMBER <span className="text-danger">*</span></label>
+                <input type="email" className="border-0 mb-3 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px] focus:ring-0" name="email" />
+              </div>
 
-                    <Form.Label className="mb-2 fw-bold">PASSWORD <span className="text-danger">*</span></Form.Label>
-                    <Form.Control type="password" className="border-0 mb-1" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}} />
+              <div className="flex flex-col">
+                <label className="mb-2 fw-bold">PASSWORD <span className="text-danger">*</span></label>
+                <input type="password" className="border-0 mb-1 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px] focus:ring-0" name="password" />
+              </div>
 
-                    <Card.Link href="#">Forgot your password?</Card.Link>
+              <a href="#">Forgot your password?</a>
 
-                    <Button className="d-block mt-3" style={{width: "100%", background: "#5865f2"}}>Log In</Button>
+              <button href="#" className="d-block mt-3 w-100 bg-[#5865f2] text-[#b3b8bf] rounded-[5px] h-[40px] fs-5 hover:bg-[#4752c4] duration-200">Log In</button>
 
-                    <div className="mt-2">Need an account? <Card.Link href="/register">Register</Card.Link></div>
-                </Form>
-            </Card.Body>
-        </Card>
+              <div className="mt-2">Need an account? <a href="/register">Register</a></div>
+          </form>
+        </div>
       </div>
     </motion.div>
   )
