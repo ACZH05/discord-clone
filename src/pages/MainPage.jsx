@@ -1,4 +1,5 @@
 import NavBar from "../components/NavBar"
+import SearchConvo from "../components/SearchConvo"
 
 function MainPage() {
   return (
@@ -8,7 +9,7 @@ function MainPage() {
                 <NavBar />
             </div>
             <div className="w-[240px] bg-[#2b2d31]">
-                Hello
+                <SearchConvo />
             </div>
             <div className="">
                 Hello
