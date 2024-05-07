@@ -9,6 +9,10 @@ export default {
       content: {}
     },
   },
+  safelist: [
+    'hover:bg-[#5865f2]',
+    'hover:bg-[#23a559]',
+  ],
   plugins: [],
 }
 

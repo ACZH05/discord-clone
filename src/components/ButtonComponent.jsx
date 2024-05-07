@@ -9,7 +9,7 @@ const logoColor = {
 }
 
 function ButtonComponent({type, icon, children}) {
-  let buttonStyle = `group flex justify-center items-center w-12 h-12 bg-[#313338] rounded-[50%] hover:rounded-[15px] hover:bg-[${bgColor[type]}] duration-200`
+  let buttonStyle = `group flex justify-center items-center cursor-pointer w-12 h-12 bg-[#313338] rounded-[50%] hover:rounded-[15px] hover:bg-[${bgColor[type]}] duration-200`
   let svg = `bi bi-${icon} group-hover:fill-[#dbdee1]`
   console.log(buttonStyle)
   return (
