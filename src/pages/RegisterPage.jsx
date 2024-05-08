@@ -1,4 +1,3 @@
-import { Button, Card, Form } from "react-bootstrap"
 import { motion } from "framer-motion"
 
 function RegisterPage() {
@@ -36,57 +35,66 @@ function RegisterPage() {
         initial="hidden"
         animate="visible"
         exit="exit"
-        className="d-flex justify-content-center align-items-center"
-        style={{height: "100vh"}}>
-            <Card style={{background: "#2b2d31", width: "30%", color: "white"}}>
-                <Card.Body>
-                    <Card.Title className="text-center">Create an account</Card.Title>
-                    <Form className="mx-3" style={{color: "#b3b8bf", fontSize: "12px"}}>
-                        <Form.Label className="my-2 fw-bold">EMAIL <span className="text-danger">*</span></Form.Label>
-                        <Form.Control type="email" className="border-0 mb-3" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}} />
+        className="d-flex justify-content-center align-items-center h-screen"
+        >
+            <div className="bg-[#2b2d31] w-[30%] text-white px-3 py-4">
+                <div className="text-center fs-4 fw-bold">Create an account</div>
+                <form className="mx-3" style={{color: "#b3b8bf", fontSize: "12px"}}>
+                    <div className="flex flex-col">
+                        <label className="my-2 fw-bold">EMAIL <span className="text-danger">*</span></label>
+                        <input type="email" className="border-0 mb-1 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px] focus:ring-0" />
+                    </div>
 
-                        <Form.Label className="my-2 fw-bold">DISPLAY NAME</Form.Label>
-                        <Form.Control className="border-0 mb-3" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}} />
+                    <div className="flex flex-col">
+                        <label className="my-2 fw-bold">DISPLAY NAME</label>    
+                        <input type="text" className="border-0 mb-1 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px] focus:ring-0" />
+                    </div>
 
-                        <Form.Label className="my-2 fw-bold">USERNAME <span className="text-danger">*</span></Form.Label>
-                        <Form.Control className="border-0 mb-3" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}} />
+                    <div className="flex flex-col">
+                        <label className="my-2 fw-bold">USERNAME <span className="text-danger">*</span></label>
+                        <input type="text" className="border-0 mb-1 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px] focus:ring-0" />
+                    </div>
 
-                        <Form.Label className="my-2 fw-bold">PASSWORD <span className="text-danger">*</span></Form.Label>
-                        <Form.Control className="border-0 mb-3" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}} />
+                    <div className="flex flex-col">
+                        <label className="my-2 fw-bold">PASSWORD <span className="text-danger">*</span></label>
+                        <input type="password" className="border-0 mb-1 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px] focus:ring-0" />
+                    </div>
+                
+                    <label className="my-2 fw-bold">DATE OF BIRTH <span className="text-danger">*</span></label>
+                    <div id="date" className="d-flex gap-3 mb-3 fs-6">
+                        <select id="day" className="flex-1 border-0 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px]">
+                            <option disabled selected hidden>Day</option>
+                            {days.map((day, id) => (
+                                <option value={day} key={id}>{day}</option>
+                            ))}
+                        </select>
+
+                        <select id="month" className="flex-1 border-0 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px]">
+                            <option disabled selected hidden>Month</option>
+                            {months.map((month, id) => (
+                                <option value={month} key={id}>{month}</option>
+                            ))}
+                        </select>
                         
-                        <Form.Label className="my-2 fw-bold">DATE OF BIRTH <span className="text-danger">*</span></Form.Label>
-                        <div id="date" className="d-flex gap-3 mb-3">
-                            <Form.Select id="day" className="border-0" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}}>
-                                <option disabled selected hidden>Day</option>
-                                {days.map((day, id) => (
-                                    <option value={day} key={id}>{day}</option>
-                                ))}
-                            </Form.Select>
+                        <select id="year" className="flex-1 border-0 bg-[#1e1f22] text-[#b3b8bf] rounded-[5px]">
+                            <option disabled selected hidden>Year</option>
+                            {years.map((year, id) => (
+                                <option value={year} key={id}>{year}</option>
+                            ))}
+                        </select>
+                    </div>
+                    
+                    <div className="flex gap-2">
+                        <input id="checkForEmail" type="checkbox" className="d-flex self-center gap-2 bg-[#2b2d31] w-[24px] h-[24px] rounded-[5px] focus:ring-0 checked:bg-[#5865f2]" />
+                        <label htmlFor="checkForEmail">(Opitional) It&apos;s okay to send me emails with Discord updates, tips, and special offers. You can opt out at any time.</label>
+                    </div>
 
-                            <Form.Select id="month" className="border-0" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}}>
-                                <option disabled selected hidden>Month</option>
-                                {months.map((month, id) => (
-                                    <option value={month} key={id}>{month}</option>
-                                ))}
-                            </Form.Select>
-                            
-                            <Form.Select id="year" className="border-0" style={{backgroundColor: "#1e1f22", color: "#b3b8bf"}}>
-                                <option disabled selected hidden>Year</option>
-                                {years.map((year, id) => (
-                                    <option value={year} key={id}>{year}</option>
-                                ))}
-                            </Form.Select>
-                        </div>
-
-                        <Form.Check className="d-flex align-items-center gap-2 mb-3" label="(Opitional) It&apos;s okay to send me emails with Discord updates, tips, and special offers. You can opt out at any time." />
-
-                        <Button className="d-block mt-3 mb-2" style={{width: "100%", background: "#5865f2"}}>Continue</Button>
-                        <Form.Label className="mb-3" style={{fontSize: "10px"}}>By registering, you agree to Discord&apos;s Terms of Service and Privacy Policy</Form.Label>
-                        
-                        <Card.Link className="d-block" href="/login">Already have an account?</Card.Link>
-                    </Form>
-                </Card.Body>
-            </Card>
+                    <button href="#" className="d-block mt-3 mb-2 w-100 bg-[#5865f2] text-white rounded-[5px] h-[40px] fs-6 hover:bg-[#4752c4] duration-200">Continue</button>
+                    <label className="mb-3" style={{fontSize: "10px"}}>By registering, you agree to Discord&apos;s Terms of Service and Privacy Policy</label>
+                    
+                    <a className="d-block fs-6" href="/login">Already have an account?</a>
+                </form>
+            </div>
         </motion.div>
     )
 }
